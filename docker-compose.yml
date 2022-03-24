@@ -1,0 +1,17 @@
+services:
+  my-db-bdcc:
+    container_name: mysql_bdcc_jpa
+    image: mysql:8.0.27
+    environment:
+      MYSQL_DATABASE: patient
+      MYSQl_USER: admin
+      MYSQl_PASSWORD: admin1234
+      MYSQL_ROOT_PASSWORD: root12345
+    volumes:
+      - my-db-bdcc-jpa:/var/lib/mysql
+    ports:
+      - "3310:3306"
+    restart: unless-stopped
+
+volumes:
+  my-db-bdcc:
